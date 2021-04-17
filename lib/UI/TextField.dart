@@ -1,6 +1,5 @@
 part of '../quick_release_package.dart';
 
-
 class UITextField extends StatefulWidget {
   final TextEditingController controller;
 
@@ -18,15 +17,19 @@ class UITextField extends StatefulWidget {
 
   final Function(String) prefixFunc;
 
+  final TextAlign textAlign;
+
   UITextField(this.controller, this.context, this.borderRad, this.placeholder,
       {List<String> autoFill = const [],
       List<TextInputFormatter> inputFormatters = const [],
       Icon prefix,
+      TextAlign textAlign = TextAlign.start,
       Function(String) prefixFunc})
       : this.autoFill = autoFill,
         this.prefix = prefix,
         this.prefixFunc = prefixFunc,
-        this.inputFormatters = inputFormatters;
+        this.inputFormatters = inputFormatters,
+        this.textAlign = textAlign;
 
   @override
   State<StatefulWidget> createState() {
@@ -37,13 +40,15 @@ class UITextField extends StatefulWidget {
 class _UITextFieldState extends State<UITextField> {
   @override
   Widget build(BuildContext context) {
-    return Card(child: TextField(
+    return Card(
+        child: TextField(
       controller: widget.controller,
       onChanged: (value) {
         setState(() {});
       },
       inputFormatters: widget.inputFormatters,
       autofillHints: widget.autoFill,
+      textAlign: widget.textAlign,
       decoration: InputDecoration(
         labelText: widget.placeholder,
         border: OutlineInputBorder(
