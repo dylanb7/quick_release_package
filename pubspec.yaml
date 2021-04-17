@@ -1,7 +1,9 @@
 name: quick_release_package
-description: A new Flutter package.
 version: 0.0.1
-homepage:
+description: A package to expidite website building.
+authors:
+  -Dylan Baker<dylanbaker7@gmail.com>
+homepage: https://github.com/dylanb7/quick_release_package.git
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
