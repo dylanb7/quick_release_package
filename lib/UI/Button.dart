@@ -1,7 +1,7 @@
 part of '../quick_release_package.dart';
 
 Widget button(String text, Function click, BuildContext context,
-    {double borderRad = 25.0, double buttonElevation = 15, Color backgroundColor, Color textColor}) {
+    {double borderRad = 25.0, double buttonElevation = 15, Color backgroundColor, Color textColor, TextStyle style}) {
   return ElevatedButton(
       onPressed: click,
       style: ButtonStyle(
@@ -38,6 +38,8 @@ Widget button(String text, Function click, BuildContext context,
           splashFactory: NoSplash.splashFactory),
       child: Text(
         text,
-        style: TextStyle(color: textColor ?? Theme.of(context).primaryColor, fontSize: 30),
+        style: style ?? TextStyle(color: textColor ?? Theme.of(context).primaryColor, fontSize: 30),
       ));
 }
+
+
