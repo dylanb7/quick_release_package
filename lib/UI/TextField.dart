@@ -54,7 +54,7 @@ class _UITextFieldState extends State<UITextField> {
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(widget.borderRad)),
         prefixIcon: widget.prefix != null
-            ? IconButton(
+            ? widget.prefixFunc == null ? widget.prefix : IconButton(
                 icon: widget.prefix,
                 onPressed: widget.prefixFunc ?? () {},
               )
