@@ -63,7 +63,7 @@ class _UITextFieldState extends State<UITextField> {
             ? null
             : IconButton(
                 splashColor: Colors.transparent,
-                splashRadius: 0,
+                splashRadius: null,
                 icon: Icon(Icons.clear),
                 onPressed: () {
                   widget.controller.clear();
